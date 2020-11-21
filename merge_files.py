@@ -1,7 +1,7 @@
 import datetime
 
 directory = "Course_files\\"
-#old_filename = directory + input("Enter the old courses file name (without file extension): ") + ".txt"
+#old_filename = input("Enter the old courses file name (without file extension) where you want tosave everything: ")
 old_filename = directory + "udemy_courses" + ".txt"
 
 old_file = open(old_filename, "r", encoding="utf-8")
@@ -12,8 +12,8 @@ new_course_number = last_course_number + 1
 old_file.close()
 
 present_date = datetime.datetime.now()
-new_filename = directory + present_date.strftime("%b") + "_" + present_date.strftime("%d") + "_Courses.txt"
-#new_filename = directory + "new_courses" + ".txt"
+new_filename = directory + present_date.strftime("%b") + "_" + str(int(present_date.strftime("%d"))) + "_Courses.txt"
+#new_filename = directory + input("Enter the name of the file which you want to copy: ") + ".txt"
 
 new_file = open(new_filename, "r", encoding="utf-8")
 new_filedata = new_file.read().split("\n")
